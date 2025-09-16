@@ -52,18 +52,13 @@ function Onboarding() {
   );
   
 }
-function DrawerNavigator() {
+function HomeWithDrawer() {
   return (
-    <NavigationContainer>
-      <Drawer.Navigator
-        screenOptions={{
-          headerShown: false, // 🚫 hides the default top bar
-        }}
-      >
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Profile" component={ProfileScreen} />
-      </Drawer.Navigator>
-    </NavigationContainer>
+    <Drawer.Navigator screenOptions={{ headerShown: false }}>
+      <Drawer.Screen name="HomeMain" component={HomeScreen} />
+      <Drawer.Screen name="SOS" component={MapsScreen} />
+      <Drawer.Screen name="Status" component={ProfileScreen} />
+    </Drawer.Navigator>
   );
 }
 
@@ -74,7 +69,7 @@ export default function app(){
         <Stack.Screen name="Onboarding" component={Onboarding} />
         <Stack.Screen name="Login" component={ZiroLoginScreen} />
         <Stack.Screen name="Register" component={ZiroSignUpScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" component={HomeWithDrawer} options={{ headerShown: false }} />
         <Stack.Screen name="Map" component={MapsScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>

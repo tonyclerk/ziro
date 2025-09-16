@@ -73,7 +73,7 @@ export default function HomeScreen() {
       {/* Top Bar */}
       <View style={styles.content}>
       <View style={styles.topBar}>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={() => navigation.openDrawer()}>
           <Ionicons name="menu" size={28} color="#fff" />
         </TouchableOpacity>
         <Text style={styles.topBarTitle}>Ziro</Text>
