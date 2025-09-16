@@ -54,17 +54,23 @@ function Onboarding() {
 }
 function DrawerNavigator() {
   return (
-    <Drawer.Navigator initialRouteName="Home">
-      <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="Profile" component={ProfileScreen} />
-      <Drawer.Screen name="Settings" component={SettingsScreen} />
-    </Drawer.Navigator>
+    <NavigationContainer>
+      <Drawer.Navigator
+        screenOptions={{
+          headerShown: false, // 🚫 hides the default top bar
+        }}
+      >
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Profile" component={ProfileScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
   );
 }
+
 export default function app(){
   return (
+      <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Main" component={DrawerNavigator} />
         <Stack.Screen name="Onboarding" component={Onboarding} />
         <Stack.Screen name="Login" component={ZiroLoginScreen} />
         <Stack.Screen name="Register" component={ZiroSignUpScreen} />
@@ -72,6 +78,7 @@ export default function app(){
         <Stack.Screen name="Map" component={MapsScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
+      </NavigationContainer>
   );
 }
 const styles = StyleSheet.create({
