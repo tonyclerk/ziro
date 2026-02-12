@@ -30,7 +30,7 @@ const Card = ({ icon, title, summary, details }) => {
       <View style={styles.cardHeader}>
       <Ionicons name={icon} size={20} color="#fff" />
       <View style={{ flex: 1 }}>
-      <Text style={{fontSize: 14, fontWeight: "bold", color: "#fff", marginTop: "10"}}>{summary}</Text>
+      <Text style={{fontSize: 14, fontWeight: "bold", color: "#fff", marginTop: 10}}>{summary}</Text>
       {/* <Text style={styles.cardSummary}>{summary}</Text> */}
       {expanded && (
         <View style={styles.details}>

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity, StyleSheet, Text } from "react-native";
+import { View, TouchableOpacity, StyleSheet, Text, Alert } from "react-native";
 import * as Location from "expo-location";
 import * as Linking from "expo-linking";
 

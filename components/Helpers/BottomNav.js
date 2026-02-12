@@ -1,8 +1,10 @@
 import React from "react";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
-export default function BottomNav({ navigation }) {
+export default function BottomNav() {
+  const navigation = useNavigation();
   return (
     <View style={styles.bottomNav}>
       <TouchableOpacity onPress={() => navigation.navigate("Home")}>
